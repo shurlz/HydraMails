@@ -18,32 +18,53 @@ documentation , resourses and bugs
   . un-subscribe from collection
 ```
 #
-### getting all subscribers
+### 1. getting all subscribers
     - GET request
 ```
-   API endpoint : https://hydramails.com/subscribe/api/< collection name >/< api key >
+   API endpoint : https://hydramails.com/api/< collection name >/< api key >
    
    Extra Optional Arguments : page = all or numerical value 
    Extra Optional Arguments : order = least_recent [ default ordering is by most recent ]
    
-   example - https://hydramails.com/subscribe/api/< collection name >/< api key >/?page=2&order=least_recent
+   example - https://hydramails.com/api/< collection name >/< api key >/?page=2&order=least_recent
 ```
 #### response type json
 ```
   {
     "mails": [
         {
-            "bachmann@sbcglobal.net": "bachmann@sbcglobal.net"
-        },
-        {
-            "frederic@comcast.net": "frederic@comcast.net"
-        },
-        {
             "mwitte layole": "mwitte@aol.com"
         },
         {
             "hydramails official": "hydramailsofficial@gmail.com"
+        },
+        {
+            "bachmann@sbcglobal.net": "bachmann@sbcglobal.net"
+        },
+        {
+            "frederic@comcast.net": "frederic@comcast.net"
         }
     ]
 }
+```
+#
+### 2. subscribing to a collection
+    - POST request
+```
+   API endpoint : https://hydramails.com/subscribe/api/< collection name >/< api key >
+   
+   - Two required parameters
+     ["name"] field : type text 
+     ["email"] field : type email
+
+```
+#### response type json
+```
+  - success
+    - {'status':'hydramailsofficial@gmail.com subscribed successfully'}
+  - failure
+    - {"status":"email field is required"}
+    - {"status":"name field is required"}
+    - {'status':'request error : un-authorized access or invalid authentication'}
+    - { custom form validation errors }
 ```
