@@ -1,9 +1,9 @@
 # HydraMails
-documentation , resourses and bugs
+documentation , issues , resources and bugs
 #
 ## Getting Started <img src="https://img.icons8.com/clouds/35/null/firework.png"/> <img src="https://img.icons8.com/clouds/35/null/firework.png"/>
 # 
-> create an account https://www.hydramails.com/auth/sign-up/
+> create an account *https://www.hydramails.com/auth/sign-up/*
 ```
   - create a new collection with API support
     - copy your API key generated upon creation
@@ -68,3 +68,23 @@ documentation , resourses and bugs
     - {'status':'request error : un-authorized access or invalid authentication'}
     - { custom form validation errors }
 ```
+#
+### 3. unsubscribing - removing an email address
+    - POST request
+```
+   API endpoint : https://hydramails.com/unsubscribe/api/< collection name >/< api key >
+   
+   - One required parameter
+     ["email"] field : type email
+
+```
+#### response type json
+```
+  - success
+    - {'status':'hydramailsofficial@gmail.com unsubscribed successfully'}
+  - failure
+    - {"status":"email field is required"}
+    - {"status":"email address is not subscribed"}
+    - { custom form validation errors }
+```
+
