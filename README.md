@@ -28,3 +28,22 @@ documentation , resourses and bugs
    
    example - https://hydramails.com/subscribe/api/< collection name >/< api key >/?page=2&order=least_recent
 ```
+#### response type json
+```
+  {
+    "mails": [
+        {
+            "bachmann@sbcglobal.net": "bachmann@sbcglobal.net"
+        },
+        {
+            "frederic@comcast.net": "frederic@comcast.net"
+        },
+        {
+            "mwitte layole": "mwitte@aol.com"
+        },
+        {
+            "hydramails official": "hydramailsofficial@gmail.com"
+        }
+    ]
+}
+```
